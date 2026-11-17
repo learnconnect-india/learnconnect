@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LearnConnect | Find Your Tutor</title>
+<style>
+:root{--navy:#17324d;--blue:#2563eb;--mint:#e9f8f3;--ink:#203040;--muted:#64748b;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#f8fbff;line-height:1.5}
+header{background:white;border-bottom:1px solid #e5edf5;position:sticky;top:0;z-index:5}
+nav{max-width:1100px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-weight:800;font-size:23px;color:var(--navy)}.logo span{color:var(--blue)}
+nav a{color:var(--ink);text-decoration:none;margin-left:18px;font-weight:600;font-size:14px}
+.btn{display:inline-block;background:var(--blue);color:white!important;padding:11px 17px;border-radius:10px;text-decoration:none;border:0;font-weight:700;cursor:pointer}
+.hero{background:linear-gradient(120deg,#eaf3ff,#eafaf4);padding:76px 22px}
+.wrap{max-width:1100px;margin:auto}.hero h1{font-size:clamp(34px,5vw,54px);line-height:1.1;color:var(--navy);max-width:650px;margin:0 0 18px}
+.hero p{font-size:18px;color:#53677c;max-width:620px;margin-bottom:26px}
+.search{display:flex;gap:10px;max-width:650px;background:white;padding:10px;border-radius:14px;box-shadow:0 8px 30px #17324d12}
+.search input{flex:1;min-width:0;border:0;padding:10px;font-size:16px;outline:0}
+section{padding:54px 22px}.section-title{text-align:center;margin:0 0 10px;color:var(--navy);font-size:30px}.sub{text-align:center;color:var(--muted);margin:0 0 30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:white;border:1px solid #e7edf4;border-radius:16px;padding:22px;box-shadow:0 5px 18px #17324d08}
+.emoji{font-size:30px}.card h3{margin:10px 0 5px;color:var(--navy)}.card p{margin:5px 0;color:var(--muted)}
+.tutor{display:flex;gap:14px;align-items:center}.avatar{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--mint);font-size:25px}
+.price{font-weight:800;color:var(--blue);margin-top:12px!important}
+.note{background:#fff8e8;border:1px solid #f4dfad;padding:14px;border-radius:12px;color:#75551a;font-size:14px;margin-top:20px}
+.cta{background:var(--navy);color:white;text-align:center;border-radius:20px;padding:38px 22px}.cta h2{margin-top:0}.cta p{color:#d5e1ec}
+footer{padding:25px 22px;text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:650px){nav{flex-wrap:wrap}nav div:last-child{width:100%}nav a{margin:0 12px 0 0}.search{flex-direction:column}.search .btn{text-align:center}}
+</style>
+</head>
+<body>
+<header><nav><div class="logo">Learn<span>Connect</span></div><div><a href="#subjects">Subjects</a><a href="#tutors">Tutors</a><a href="#join">Join as Tutor</a></div></nav></header>
+<main>
+<section class="hero"><div class="wrap">
+<h1>Learn anything. From anywhere.</h1>
+<p>Discover online tutors, build new skills, and learn at your own pace — all in one place.</p>
+<div class="search"><input id="subjectSearch" aria-label="Search subject" placeholder="What do you want to learn? e.g. Maths"><button class="btn" onclick="searchTutors()">Find a tutor</button></div>
+</div></section>
+<section id="subjects"><div class="wrap"><h2 class="section-title">Explore popular subjects</h2><p class="sub">Choose a subject and start learning.</p>
+<div class="grid">
+<div class="card"><div class="emoji">📐</div><h3>Mathematics</h3><p>School, intermediate and foundation</p></div>
+<div class="card"><div class="emoji">🔬</div><h3>Science</h3><p>Physics, Chemistry and Biology</p></div>
+<div class="card"><div class="emoji">💻</div><h3>Coding & Technology</h3><p>Programming and digital skills</p></div>
+<div class="card"><div class="emoji">🗣️</div><h3>Languages</h3><p>English, Telugu, Hindi and more</p></div>
+</div></div></section>
+<section id="tutors" style="background:#f0f6fc"><div class="wrap"><h2 class="section-title">Meet our tutors</h2><p class="sub">Sample profiles — replace these with real, verified tutor details before launch.</p>
+<div class="grid" id="tutorGrid">
+<div class="card tutor-card"><div class="tutor"><div class="avatar">👩‍🏫</div><div><h3>Priya Sharma</h3><p>Mathematics · 5 years experience</p></div></div><p class="price">Sample fee: ₹400 / hour</p></div>
+<div class="card tutor-card"><div class="tutor"><div class="avatar">👨‍🏫</div><div><h3>Rahul Reddy</h3><p>Physics · 4 years experience</p></div></div><p class="price">Sample fee: ₹350 / hour</p></div>
+<div class="card tutor-card"><div class="tutor"><div class="avatar">👩‍💻</div><div><h3>Ananya Rao</h3><p>Python · 3 years experience</p></div></div><p class="price">Sample fee: ₹500 / hour</p></div>
+</div><p id="searchMessage" class="sub" aria-live="polite"></p>
+<div class="note">These are demonstration listings only. No real tutor has been verified or booked through this demo website.</div>
+</div></section>
+<section id="join"><div class="wrap"><div class="cta"><h2>Are you a tutor?</h2><p>Share your knowledge and connect with learners across India.</p><a class="btn" style="background:white;color:#17324d!important" href="https://forms.google.com/" target="_blank" rel="noopener">Create a free tutor registration form</a></div></div></section>
+</main>
+<footer>© 2026 LearnConnect · A student–tutor learning platform concept</footer>
+<script>
+function searchTutors(){const q=document.getElementById('subjectSearch').value.trim().toLowerCase();const cards=[...document.querySelectorAll('.tutor-card')];let count=0;cards.forEach(c=>{const show=!q||c.innerText.toLowerCase().includes(q);c.style.display=show?'block':'none';if(show)count++});document.getElementById('searchMessage').textContent=count?'Showing '+count+' sample tutor profile(s).':'No matching sample tutors yet. Try Maths, Physics or Python.';document.getElementById('tutors').scrollIntoView({behavior:'smooth'});}
+</script>
+</body></html>
